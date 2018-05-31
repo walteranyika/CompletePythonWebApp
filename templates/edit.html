@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Project</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-light">
+    <!-- Links -->
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="/projects">View Projects</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/new-project">Add Project</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">A</div>
+        <div class="col-sm-4">
+            <form action="/save/{{ project.id }}" method="post">
+                <div class="form-group">
+                    <input type="text" value="{{ project.title }}"  name="title" required class="form-control" placeholder="Project Title">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" value="{{ project.client }}"  name="client" required class="form-control" placeholder="Clients Name">
+                </div>
+
+                <div class="form-group">
+                    <input type="date" value="{{ project.start_date }}"  name="start_date" required class="form-control" placeholder="Start Date">
+                </div>
+
+                 <div class="form-group">
+                    <input type="date" value="{{ project.end_date }}"  name="end_date" required class="form-control" placeholder="Expected End Date">
+                </div>
+
+                <div class="form-group">
+                    <textarea name="desc"  rows="5" required class="form-control" placeholder="Description">{{ project.desc }}</textarea>
+                </div>
+
+                <button class="btn btn-primary btn-block">Edit Project</button>
+            </form>
+        </div>
+        <div class="col-sm-4">C</div>
+    </div>
+</div>
+
+
+</body>
+</html>
