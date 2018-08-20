@@ -7,7 +7,7 @@ class User(Model):
     email =CharField(unique=True)
     password=CharField()
     class Meta:
-        table_name="users"
+        db_table="users"
         database=db
 
 User.create_table(fail_silently=True)
