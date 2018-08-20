@@ -10,7 +10,7 @@ class Project(Model):
     desc =TextField()
     status=BooleanField(default=False)
     class Meta:
-        table_name="projects"
+        db_table="projects"
         database=db
 
 Project.create_table(fail_silently=True)
