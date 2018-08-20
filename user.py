@@ -1,6 +1,6 @@
 from peewee import *
 
-db=PostgresqlDatabase('complete',user='postgres',host='localhost',password='lydia@2010')
+db=MySQLDatabase('complete',user='postgres',host='localhost',password='lydia@2010')
 
 class User(Model):
     names = CharField()
