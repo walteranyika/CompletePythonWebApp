@@ -9,6 +9,7 @@ class Project(Model):
     end_date=DateField()
     desc =TextField()
     status=BooleanField(default=False)
+    user_id = IntegerField()
     class Meta:
         table_name="projects"
         database=db

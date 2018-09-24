@@ -23,6 +23,11 @@
     <div class="row">
         <div class="col-sm-4">A</div>
         <div class="col-sm-4">
+            {% with messages = get_flashed_messages() %}
+              {% for m in messages %}
+                 <h2 class="text-center">{{ m }}</h2>
+              {% endfor %}
+            {% endwith %}
             <form action="/signin" method="post">
                 <div class="form-group">
                     <input type="email" name="email" required class="form-control" placeholder="Email">
