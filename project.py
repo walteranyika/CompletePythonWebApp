@@ -1,6 +1,6 @@
 from peewee import *
 
-db=PostgresqlDatabase('complete',user='postgres',host='localhost',password='lydia@2010')
+db=MySQLDatabase('complete',user='postgres',host='localhost',password='lydia@2010')
 
 class Project(Model):
     title = CharField()
@@ -11,7 +11,7 @@ class Project(Model):
     status=BooleanField(default=False)
     user_id = IntegerField()
     class Meta:
-        table_name="projects"
+        db_table="projects"
         database=db
 
 Project.create_table(fail_silently=True)
